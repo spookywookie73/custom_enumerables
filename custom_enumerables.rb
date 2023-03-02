@@ -44,4 +44,12 @@ module Enumerable
     result
   end
   
+  def my_any?
+    for num in self
+      return true if yield(num)
+    end
+      return false
+  end
+
+  
 end
