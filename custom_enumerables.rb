@@ -51,5 +51,12 @@ module Enumerable
       return false
   end
 
+  def my_none?
+    for num in self
+      return false if yield(num)
+    end
+      return true
+  end
+
   
 end
