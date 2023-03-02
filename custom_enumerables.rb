@@ -29,5 +29,19 @@ module Enumerable
     end
     result
   end
+
+  def my_all?
+    count = 0
+    result = nil
+    while count != self.size
+      if yield self[count]
+        result = true
+      else
+        result = false
+      end
+      count += 1
+    end
+    result
+  end
   
 end
