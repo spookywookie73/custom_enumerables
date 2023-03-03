@@ -1,5 +1,5 @@
 module Enumerable
-
+  # these method's are for Array's only.
   def my_each
     count = 0
     while count != self.size
@@ -8,7 +8,7 @@ module Enumerable
     end
     self
   end
-
+  
   def my_each_with_index
     count = 0
     while count != self.size
@@ -74,6 +74,17 @@ module Enumerable
       result.push(yield(num))
     end
     return result
+  end
+
+  def my_inject(arg = nil)
+    for num in self
+      if arg == nil
+        arg = num
+      else
+        arg = yield(arg, num)
+      end
+    end
+    arg
   end
 
 end
