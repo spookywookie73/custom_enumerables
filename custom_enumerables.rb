@@ -60,13 +60,20 @@ module Enumerable
 
   def my_count
     count = 0
-    
     return self.size unless block_given?
 
     for num in self
       count += 1 if yield(num)
     end
-      return count
+    return count
   end
   
+  def my_map
+    result = []
+    for num in self
+      result.push(yield(num))
+    end
+    return result
+  end
+
 end
